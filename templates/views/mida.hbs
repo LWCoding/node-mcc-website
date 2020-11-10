@@ -5,11 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/general.css">
         <title>Malaysian Club of Chicago - MIDA</title>
+        <style>
+            @media only screen and (max-width: 500px) {
+                #mida-banner {
+                    display: none;
+                }
+            }
+        </style>
     </head>
     <body>
         {{>navbar}}
         <div id="right">
-            <img style="width: 100%;" src="./img/mida.jpg">
+            <img id="mida-banner" style="width: 100%;" src="./img/mida.jpg">
             <div style="min-height: 200px;" class="vert-block">
                 <div style="padding: 30px 0; font-size: 19px; line-height: 1.3em; max-width: 90%" class="text">
                     <p>The Malaysian Industrial Development Authority (MIDA) is the government’s principal agency for the promotion and coordination of industrial development in Malaysia. 
