@@ -5,6 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/general.css">
         <title>Malaysian Club of Chicago - Contact Us</title>
+        <style>
+            @media only screen and (max-width: 500px) {
+                #website-text {
+                    display: none;
+                }
+                #end-spacer {
+                    height: 30vh !important;
+                }
+            }
+        </style>
     </head>
     <body>
         {{>navbar}}
@@ -14,7 +24,7 @@
                 <div style="font-size: 19px; line-height: 1.3em; max-width: 90%" class="text">
                     <p><strong>Mailing Address:</strong> 553 West 31st Street, Chicago IL 60616</p>
                     <p><strong>E-mail:</strong> <a href="mailto:web@malaysianclubchicago.com">web@malaysianclubchicago.com</a></p>
-                    <p><strong>Website:</strong> <a href="/" id="website"></a></p>
+                    <p id="website-text"><strong>Website:</strong> <a href="/" id="website"></a></p>
                 </div>
             </div>
             <script>
@@ -24,7 +34,7 @@
                     $("#website").text(website.join("/"));
                 })
             </script>
-            <div style="height: 25vh;"></div>
+            <div id="end-spacer" style="height: 16vh;"></div>
             {{>footer}}
         </div>
     </body>
