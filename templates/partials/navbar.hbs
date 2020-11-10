@@ -1,0 +1,196 @@
+<style>
+    #nav {
+        width: 19vw;
+    }
+
+    #content, #content-small {
+        width: 18.8vw;
+        height: 100vh;
+        background: rgb(41, 146, 41);
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        overflow-y: auto;
+    }
+
+    .mcc-flag {
+        width: 60%;
+        margin: 6% auto;
+    }
+
+    .mcc-flag:hover {
+        cursor: pointer;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .links a {
+        padding: 5% 0;
+        text-align: center;
+        color: white;
+        background: rgb(9, 87, 9);
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .subcategory {
+        padding: 4% 0 !important;
+        margin-left: 1em !important;
+        background: rgb(0, 128, 0, 1) !important;
+        transition: background-color 0.4s ease;
+    }
+    
+    .subcategory:hover {
+        background: rgb(0, 128, 0, 0) !important;
+    }
+
+    #content-small {
+        display: none;
+    }
+
+    @media only screen and (max-width: 610px) {
+        .subcategory {
+            font-size: 18px !important;
+        }
+        .mcc-flag {
+            left: 20px !important;
+        }
+        #mcc-cat, #malaysia-cat, #chicago-cat {
+            width: 25vw !important;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        #content {
+            display: none;
+        }
+        #nav, #content-small {
+            width: 100vw;
+            height: 10vh;
+            flex-direction: row;
+            position: static;
+            display: block;
+        }
+        .mcc-flag {
+            position: absolute;
+            margin: 0;
+            top: 10px;
+            left: 30px;
+            width: 80px;
+        }
+        .links {
+            flex-direction: row;
+            position: absolute;
+            right: 0;
+        }
+        .links a {
+            background: none;
+            font-weight: 700;
+            padding-top: 3.5vh;
+            padding-bottom: 3.5vh;
+        }
+        #home {
+            display: none;
+        }
+        #mcc-cat, #malaysia-cat, #chicago-cat {
+            position: relative;
+            width: 22vw;
+        }
+        #mcc, #malaysia, #chicago {
+            z-index: 3;
+            top: 0;
+            left: -20px;
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            transform: translateY(10vh);
+        }
+        #mcc a, #malaysia a, #chicago a {
+            width: 100%;
+        }
+        .subcategory:hover {
+        background: rgb(0, 155, 0) !important;
+        }
+    }
+</style>
+<div id="nav">
+    <div id="content">
+        <img class="mcc-flag" src="./img/mccflag.png" onclick="window.location.href = '/'">
+        <div class="links">
+            <a href="/">Home</a>
+            <a>MCC</a>
+            <a class="subcategory" href="/objectives">MCC Objectives</a>
+            <a class="subcategory" href="/join">Join MCC</a>
+            <a class="subcategory" href="/board-members">Board Members</a>
+            <a class="subcategory" href="/contact">Contact Information</a>
+            <a class="subcategory" href="/achievements">Achievements</a>
+            <a class="subcategory" target="_blank" href="https://malaysianclubchicago.com/MCC%20PhotoCenter/index.html">Photo Gallery</a>
+            <a class="subcategory" href="/past-events">Past Events</a>
+            <a>Malaysia</a>
+            <a class="subcategory" href="/malaysia">About Malaysia</a>
+            <a class="subcategory" href="/newspaper">Malaysian Newspaper</a>
+            <a class="subcategory" href="/embassy">Malaysian Embassy</a>
+            <a class="subcategory" href="/mida">MIDA</a>
+            <a>Chicago</a>
+            <a class="subcategory" href="/local">Local Information</a>
+            <a class="subcategory" href="/jobs">Job Posting</a>
+        </div>
+    </div>
+    <div id="content-small">
+        <img class="mcc-flag" src="./img/mccflag.png" onclick="window.location.href = '/'">
+        <div class="links">
+            <div id="mcc-cat">
+                <a>MCC</a>
+                <div id="mcc">
+                    <a class="subcategory" href="/objectives">MCC Objectives</a>
+                    <a class="subcategory" href="/join">Join MCC</a>
+                    <a class="subcategory" href="/board-members">Board Members</a>
+                    <a class="subcategory" href="/contact">Contact Information</a>
+                    <a class="subcategory" href="/achievements">Achievements</a>
+                    <a class="subcategory" target="_blank" href="https://malaysianclubchicago.com/MCC%20PhotoCenter/index.html">Photo Gallery</a>
+                    <a class="subcategory" href="/past-events">Past Events</a>
+                </div>
+            </div>
+            <div id="malaysia-cat">
+                <a>Malaysia</a>
+                <div id="malaysia">
+                    <a class="subcategory" href="/malaysia">About Malaysia</a>
+                    <a class="subcategory" href="/newspaper">Malaysian Newspaper</a>
+                    <a class="subcategory" href="/embassy">Malaysian Embassy</a>
+                    <a class="subcategory" href="/mida">MIDA</a>
+                </div>
+            </div>
+            <div id="chicago-cat">
+                <a>Chicago</a>
+                <div id="chicago">
+                    <a class="subcategory" href="/local">Local Information</a>
+                    <a class="subcategory" href="/jobs">Job Posting</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $("#mcc-cat").hover(() => {
+        $("#mcc").fadeIn(300)
+    }, () => {
+        $("#mcc").fadeOut(200)
+    })
+    $("#malaysia-cat").hover(() => {
+        $("#malaysia").fadeIn(300)
+    }, () => {
+        $("#malaysia").fadeOut(200)
+    })
+    $("#chicago-cat").hover(() => {
+        $("#chicago").fadeIn(300)
+    }, () => {
+        $("#chicago").fadeOut(200)
+    })
+</script>

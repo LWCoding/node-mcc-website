@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/general.css">
+        <title>Malaysian Club of Chicago - Contact Us</title>
+    </head>
+    <body>
+        {{>navbar}}
+        <div id="right">
+            <div class="vert-block">
+                <img style="filter: brightness(90%);" src="./img/malaysia2.jpg">
+                <div style="font-size: 19px; line-height: 1.3em; max-width: 90%" class="text">
+                    <p><strong>Mailing Address:</strong> 553 West 31st Street, Chicago IL 60616</p>
+                    <p><strong>E-mail:</strong> <a href="mailto:web@malaysianclubchicago.com">web@malaysianclubchicago.com</a></p>
+                    <p><strong>Website:</strong> <a href="/" id="website"></a></p>
+                </div>
+            </div>
+            <script>
+                $(document).ready(() => {
+                    let website = window.location.href.split("/")
+                    website.pop()
+                    $("#website").text(website.join("/"));
+                })
+            </script>
+            {{>footer}}
+        </div>
+    </body>
+</html>

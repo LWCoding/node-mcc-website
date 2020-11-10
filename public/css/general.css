@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, p, a, label, textarea {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+    padding: 0.5em 1em;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: 700;
+    border: none;
+    color: white;
+    background: #EA5B3A;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+html {
+    background: rgb(226, 226, 187);
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+#right {
+    width: 81vw;
+    position: relative;
+}
+
+.text {
+    align-self: center;
+    text-align: center;
+    padding: 1em 2em;
+}
+
+.text h3 {
+    font-size: 22px;
+    color: rgb(49, 49, 49);
+}
+
+.text p {
+    font-size: 18px;
+    color: rgb(40, 40, 40);
+    margin: 0.4em 0;
+}
+
+.wide-text p {
+    margin: 0.6em 0;
+}
+
+.annotate {
+    font-size: 16px;
+    color: rgb(121, 121, 121) !important;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.vert-block, .hor-block {
+    display: flex;
+    background: white;
+    width: 80%;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 50px auto;
+    position: relative;
+    min-height: 280px;
+    height: auto;
+}
+
+.vert-block img, .hor-block img {
+    border-radius: 20px;
+}
+
+.hor-block {
+    flex-direction: row;
+}
+
+.vert-block {
+    flex-direction: column;
+}
+
+.vert-block img {
+    width: 100%;
+}
+
+.hor-block img {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.left-img img {
+    left: 0;
+}
+
+.right-img img {
+    right: 0;
+}  
+
+.left-img .text {
+    position: absolute;
+    width: 50%;
+    left: 75%;
+    transform: translateX(-50%);
+}
+
+.right-img .text {
+    position: absolute;
+    width: 50%;
+    right: 75%;
+    transform: translateX(50%);
+}
+
+.spacer {
+    display: block;
+    height: 12vh;
+}
+
+a, a:visited {
+    color: blue;
+}
+
+@media only screen and (max-width: 900px) {
+    .vert-block .text {
+        padding: 1em;
+        min-width: 80%;
+    }
+    .hor-block .text {
+        padding: 1em;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        flex-direction: column;
+    }
+    #right {
+        width: 100vw;
+        height: 88vh;
+    }
+}

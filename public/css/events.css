@@ -1,0 +1,56 @@
+#dim {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+}
+
+#overall {
+    display: none;
+}
+
+#overlay {
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 4vh 3vw;
+    border-radius: 25px;
+    background: white;
+    width: auto;
+    height: auto;
+    z-index: 3;
+}
+
+#close-overall {
+    margin-top: 1em;
+}
+
+#overlay-text {
+    width: 55vw;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+#overlay-text > img {
+    margin: 2em 0;
+    width: 100%;
+}
+
+.text a {
+    line-height: 1.5em;
+}
+
+@media only screen and (max-width: 700px) {
+    #overlay-text {
+        width: 80vw;
+        max-height: 60vh;
+    }
+    #overlay img {
+        width: 80%;
+    }
+}
